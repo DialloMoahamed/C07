@@ -1,23 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    char chaine[100];
-    char a_remplacer, remplacement;
+    char str[100], oldChar, newChar;
     int i = 0;
 
-    // Lire la chaîne + 2 caractères (à remplacer, puis de remplacement)
-    scanf("%s %c %c", chaine, &a_remplacer, &remplacement);
+    fgets(str, sizeof(str), stdin);
 
-    // Parcourir la chaîne
-    while (chaine[i] != '\0') {
-        if (chaine[i] == a_remplacer) {
-            chaine[i] = remplacement; // Remplacer si égal au caractère cible
+    scanf(" %c", &oldChar);
+
+    scanf(" %c", &newChar);
+
+    while (str[i] != '\0') {
+        if (str[i] == oldChar) {
+            str[i] = newChar;
         }
         i++;
     }
 
-    // Affichage du résultat
-    printf("Résultat : %s\n", chaine);
-
+    printf("Résultat : %s", str);
     return 0;
 }
