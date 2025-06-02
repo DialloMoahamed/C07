@@ -22,7 +22,7 @@ int main() {
   }
 
   // Afficher la chaîne modifiée
-  printf("Résultat: %s\n", chaine);
+  printf("Résultat: %s", chaine);
 
   return 0;
 }
