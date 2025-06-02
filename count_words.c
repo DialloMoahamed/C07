@@ -1,19 +1,32 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main() {
-    char str[100];
-    int i = 0, count = 0, inWord = 0;
+    char str[200];
+    int i = 0, inWord = 0, count = 0;
 
-    fgets(str, sizeof(str), stdin); // Lecture sécurisée
+    printf("Entrez une phrase : ");
+    fgets(str, sizeof(str), stdin);
+
+    // Nettoyer les ponctuations (sauf apostrophes)
+    while (str[i] != '\0') {
+        if (ispunct(str[i]) && str[i] != '\'') {
+            str[i] = ' ';
+        }
+        i++;
+    }
+
+    // Réinitialiser l'index pour analyser les mots
+    i = 0;
 
     while (str[i] != '\0') {
-        if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n') {
+        if (isalpha(str[i]) || str[i] == '\'') {
             if (!inWord) {
-                inWord = 1; // Début d'un mot
+                inWord = 1;
                 count++;
             }
         } else {
-            inWord = 0; // Fin d'un mot
+            inWord = 0;
         }
         i++;
     }
