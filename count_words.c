@@ -5,7 +5,6 @@ int main() {
     char str[200];
     int i = 0, inWord = 0, count = 0;
 
-    printf("Entrez une phrase : ");
     fgets(str, sizeof(str), stdin);
 
     // Nettoyer les ponctuations (sauf apostrophes)
