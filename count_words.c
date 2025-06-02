@@ -4,7 +4,6 @@ int main() {
     char str[200];
     int i = 0, inWord = 0, wordCount = 0;
 
-    printf("Entrez une phrase : ");
     fgets(str, sizeof(str), stdin);
 
     while (str[i] != '\0') {
