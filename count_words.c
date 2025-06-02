@@ -1,34 +1,27 @@
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 int main() {
-    char chaine[200];
-    int i = 0;
-    int dans_un_mot = 0;
-    int mots = 0;
+    char chaine[100];
+    int count = 0;
+    int in_word = 0;
 
-    // Lire une ligne entière (avec espaces)
     fgets(chaine, sizeof(chaine), stdin);
+    chaine[strcspn(chaine, "\n")] = 0;
 
-    // Parcourir la chaîne caractère par caractère
-    while (chaine[i] != '\0') {
-        char c = chaine[i];
-
-        if (c != ' ' && c != '\n' && c != '\t') {
-            // Si on trouve une lettre et qu'on n'était pas déjà dans un mot
-            if (dans_un_mot == 0) {
-                mots++;            // Nouveau mot détecté
-                dans_un_mot = 1;   // On est dans un mot
+    if (chaine[0] != '\0') {
+        for (int i = 0; chaine[i] != '\0'; i++) {
+            if (isspace(chaine[i])) {
+                in_word = 0;
+            } else if (!in_word) {
+                in_word = 1;
+                count++;
             }
-        } else {
-            // Si on rencontre un espace ou retour à la ligne
-            dans_un_mot = 0;       // Fin d’un mot en cours
         }
-
-        i++;
     }
 
-    // Afficher le nombre de mots
-    printf("Nombre de mots : %d\n", mots);
+    printf("Nombre de mots : %d\n", count);
 
     return 0;
 }
