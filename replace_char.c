@@ -6,7 +6,9 @@ int main() {
     int i;
 
     // Lire la chaîne + les deux caractères sur une seule ligne
-    scanf("%s %c %c", chaine, &car_a_remplacer, &car_de_remplacement);
+    scanf("%s", chaine);
+    scanf(" %c",&car_a_remplacer);
+    scanf(" %c", &car_de_remplacement);
 
     // Remplacement
     for (i = 0; chaine[i] != '\0'; i++) {
