@@ -16,7 +16,7 @@ int main() {
     }
 
     // Affichage conforme à l'exemple
-    printf("Résultat : %s\n", chaine);
+    printf("Resultat : %s\n", chaine);
 
     return 0;
 }
