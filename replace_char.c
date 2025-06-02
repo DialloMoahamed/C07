@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
+int main() {
     char chaine[100];
     char caractere_a_remplacer, caractere_de_remplacement;
 
