@@ -18,7 +18,7 @@ int main() {
     }
 
     // Affichage exactement conforme
-    printf("Résultat : %s\n", chaine);
+    printf("Résultat àprés remplacement : %s\n", chaine);
 
     return 0;
 }
