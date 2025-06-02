@@ -1,24 +1,22 @@
 #include <stdio.h>
-#include <string.h>
 
 int main() {
     char chaine[100];
-    char char_a_remplacer;
-    char char_remplacement;
+    char a_remplacer, remplacement;
+    int i = 0;
 
-    fgets(chaine, sizeof(chaine), stdin);
-    chaine[strcspn(chaine, "\n")] = 0; // Supprimer le caractère de nouvelle ligne
+    // Lire la chaîne + 2 caractères (à remplacer, puis de remplacement)
+    scanf("%s %c %c", chaine, &a_remplacer, &remplacement);
 
-    scanf(" %c", &char_a_remplacer); // Notez l'espace avant %c pour consommer le potentiel newline précédent
-
-    scanf(" %c", &char_remplacement); // Notez l'espace avant %c
-
-    for (int i = 0; chaine[i] != '\0'; i++) {
-        if (chaine[i] == char_a_remplacer) {
-            chaine[i] = char_remplacement;
+    // Parcourir la chaîne
+    while (chaine[i] != '\0') {
+        if (chaine[i] == a_remplacer) {
+            chaine[i] = remplacement; // Remplacer si égal au caractère cible
         }
+        i++;
     }
 
+    // Affichage du résultat
     printf("Résultat : %s\n", chaine);
 
     return 0;
